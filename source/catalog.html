@@ -1,0 +1,94 @@
+{% set pageId = 1 %}
+{% set permalink = pages[pageId].path %}
+{% extends "./templates/_layout.twig" %}
+
+{% block main %}
+<!--Каталог товаров-->
+  <main class="catalog-page">
+    <div class="catalog-page__wrapper-title">
+      <h1 class="page__centerer catalog-page__title inner-title">Каталог товаров</h1>
+    </div>
+
+
+<!--Карточки товаров-->
+    <section class="page__centerer catalog-page__product product-catalog">
+      <h2 class="visually-hidden">Карточки с товарами</h2>
+      <ul class="product-catalog__list">
+        <li class="product-catalog__card product-card">
+          <a class="product-card__link" href="#">
+            {% include "./templates/picture.twig" with {name: "catalog-rabbit", class: "product-card__image"} %}
+          </a>
+          <div class="product-card__content">
+            <div class="product-card__wrapper-text">
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Зайчик-попрыгайчик</h3>
+              </a>
+              <p class="product-card__description">Рост 30 см, вес 200 г</p>
+            </div>
+            <div class="product-card__wrapper-price">
+              <p class="product-card__price">1 200 руб.</p>
+              <a class="product-card__button button-add-cart" href="#">
+                <span class="visually-hidden">Добавить в корзину</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="product-catalog__card product-card">
+          <a class="product-card__link" href="#">
+            {% include "./templates/picture.twig" with {name: "catalog-laundry-basket", class: "product-card__image"} %}
+          </a>
+          <div class="product-card__content">
+            <div class="product-card__wrapper-text">
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Корзинка для белья</h3>
+              </a>
+              <p class="product-card__description">Диаметр 15 см, высота 10 см</p>
+            </div>
+            <div class="product-card__wrapper-price">
+              <p class="product-card__price">690 руб.</p>
+              <a class="product-card__button button-add-cart" href="#">
+                <span class="visually-hidden">Добавить в корзину</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="product-catalog__card product-card">
+          <a class="product-card__link" href="#">
+            {% include "./templates/picture.twig" with {name: "catalog-toy-basket", class: "product-card__image"} %}
+          </a>
+          <div class="product-card__content">
+            <div class="product-card__wrapper-text">
+              <a class="product-card__link" href="#">
+                <h3 class="product-card__title">Большая корзинка для&nbsp;игрушек</h3>
+              </a>
+              <p class="product-card__description">Диаметр 30 см, высота 30 см</p>
+            </div>
+            <div class="product-card__wrapper-price">
+              <p class="product-card__price">1 500 руб.</p>
+              <a class="product-card__button button-add-cart" href="#">
+                <span class="visually-hidden">Добавить в корзину</span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+<!--Процесс производства-->
+    <section class="page__centerer catalog-page__production production">
+      <div class="production__title-wrapper">
+        <h2 class="production__title">Процесс производства</h2>
+      </div>
+      <div class="production__wrapper-video">
+        {% include "./templates/picture.twig" with {name: "video", class: "production__image"} %}
+        <button class="production__button-play button-play" type="button">
+          <span class="visually-hidden">Воспроизвести видео</span>
+        </button>
+      </div>
+      <p class="production__description">По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
+      <a class="production__button button production__button--mobile" href="#">Сделать заказ</a>
+    </section>
+
+  </main>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+.form-label {
+  color: var(--main-color);
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: 700;
+
+  @media (--not-mobile) {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,45 @@
+.form-input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid var(--base-color);
+  padding: 16px 0 16px;
+  font-family: inherit;
+  color: var(--base-color);
+  font-size: 17px;
+  line-height: 18px;
+
+  @media (--not-mobile) {
+    padding: 12px 17px 12px;
+    font-size: 19px;
+  }
+
+  &::placeholder {
+    color: var(--main-color);
+    opacity: 0.3;
+    font-size: 17px;
+    line-height: 18px;
+
+    @media (--not-mobile) {
+      font-size: 19px;
+    }
+  }
+
+  &:hover {
+    border-color: #62d1ba;
+  }
+
+  &:hover + .phone-form__icon-phone,
+  &:hover + .form-email__icon-email {
+    background-color: #62d1ba;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: #62d1ba;
+  }
+
+  &:focus-visible + .phone-form__icon-phone,
+  &:focus-visible + .form-email__icon-email {
+    background-color: #62d1ba;
+  }
+}

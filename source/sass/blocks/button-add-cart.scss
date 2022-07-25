@@ -1,0 +1,31 @@
+.button-add-cart {
+  &::before {
+    content: "";
+    display: block;
+    width: 21px;
+    height: 21px;
+    background: var(--main-color);
+    mask: url("../../icons/sprite.svg#cart") no-repeat center/cover;
+    opacity: 0.2;
+  }
+
+
+  &:hover::before {
+    background: #63d1bb;
+    opacity: 1;
+  }
+
+  &:active::before {
+    background: #63d1bb;
+    opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline-offset: 4px;
+  }
+
+  &:focus-visible::before {
+    background: #63d1bb;
+    opacity: 1;
+  }
+}

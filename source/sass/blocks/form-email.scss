@@ -1,0 +1,53 @@
+.form-email__label {
+  margin-bottom: 4px;
+
+  @media (--not-mobile) {
+    margin-bottom: 0;
+    align-self: center;
+    width: 25%;
+  }
+
+  @media (--desktop) {
+    width: calc(1 / 6 * 100%);
+  }
+}
+
+.form-email__input-wrapper {
+  position: relative;
+
+  @media (--not-mobile) {
+    width: 75%;
+  }
+
+  @media (--desktop) {
+    width: calc(4 / 6 * 100%);
+  }
+}
+
+.form-email__input {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.form-email__icon-email {
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.2);
+  mask-image: url("../../icons/sprite.svg#email");
+  mask-size: 32px;
+  mask-repeat: no-repeat;
+  mask-position: top;
+  top: 11px;
+  right: 3px;
+
+  @media (--not-mobile) {
+    top: 11px;
+    right: 22px;
+  }
+
+  @media (--desktop) {
+    right: 4px;
+  }
+}

@@ -1,0 +1,23 @@
+.logo__image {
+  display: block;
+  margin: 0 auto;
+
+  @media (--not-mobile) {
+    margin: 0;
+    width: 114px;
+    height: 46px;
+  }
+
+  @media (--desktop) {
+    width: 149px;
+    height: 72px;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}

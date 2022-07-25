@@ -1,0 +1,17 @@
+.inner-title {
+  color: var(--main-color);
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+
+  @media (--not-mobile) {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  @media (--desktop) {
+    font-size: 53px;
+    line-height: 57px;
+  }
+}

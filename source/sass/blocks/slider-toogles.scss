@@ -1,0 +1,38 @@
+.slider-toogles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.slider-toogles__icon {
+  width: 50%;
+  border: 1px solid #ececec;
+  min-height: 52px;
+  background-color: transparent;
+  padding: 0;
+  background-image: url("../../icons/sprite.svg#arrow-left");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (--not-mobile) {
+    border: none;
+    width: 56px;
+    height: auto;
+  }
+}
+
+.slider-toogles__icon_next {
+  transform: rotate(180deg);
+
+  @media (--not-mobile) {
+    margin-left: 37px;
+  }
+}

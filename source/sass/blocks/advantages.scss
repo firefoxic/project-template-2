@@ -1,0 +1,89 @@
+.advantages {
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--main-color);
+
+  @media (--not-mobile) {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+.advantages__title {
+  margin: 0;
+  margin-bottom: 28px;
+
+  @media (--not-mobile) {
+    margin-bottom: 40px;
+  }
+}
+
+.advantages__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+
+  @media (--not-mobile) {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: auto;
+    gap: 58px 33px;
+  }
+
+  @media (--desktop) {
+    column-gap: 50px;
+  }
+}
+
+.advantages__item {
+  display: grid;
+  list-style-type: none;
+  row-gap: 15px;
+
+  @media (--not-mobile) {
+    row-gap: 17px;
+  }
+
+  @media (max-width: 767.9px) {
+    &:nth-child(2n+2) {
+      order: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 55px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 55px;
+    position: relative;
+  }
+
+  &--icon_flower::before {
+    background-image: url("../../icons/sprite.svg#advantage-flower");
+  }
+
+  &--icon_clew::before {
+    background-image: url("../../icons/sprite.svg#advantage-clew");
+  }
+
+  &--icon_banknote::before {
+    background-image: url("../../icons/sprite.svg#advantage-banknote");
+  }
+
+  &--icon_rocket::before {
+    background-image: url("../../icons/sprite.svg#advantage-rocket");
+  }
+
+  &--icon_heart::before {
+    background-image: url("../../icons/sprite.svg#advantage-heart");
+  }
+
+  &--icon_present::before {
+    background-image: url("../../icons/sprite.svg#advantage-present");
+  }
+}

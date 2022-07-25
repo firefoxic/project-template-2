@@ -1,0 +1,25 @@
+.modal-content {
+  padding: 28px 30px 46px;
+  text-align: center;
+
+  @media (--not-mobile) {
+    padding: 37px 92px 46px 93px;
+  }
+}
+
+.modal-content__title {
+  color: var(--main-color);
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 14px;
+
+  @media (--not-mobile) {
+    font-size: 30px;
+    line-height: 57px;
+    margin-bottom: 10px;
+    padding: 0 13px;
+  }
+}

@@ -1,0 +1,51 @@
+.phone-form__label {
+  margin-bottom: 4px;
+
+  @media (--not-mobile) {
+    align-self: center;
+    margin-bottom: 0;
+    width: 25%;
+  }
+
+  @media (--desktop) {
+    width: calc(1 / 6 * 100%);
+  }
+}
+
+.phone-form__input-wrapper {
+  position: relative;
+
+  @media (--not-mobile) {
+    width: 75%;
+  }
+
+  @media (--desktop) {
+    width: calc(4 / 6 * 100%);
+  }
+}
+
+.phone-form__input {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.phone-form__icon-phone {
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.2);
+  mask-image: url("../../icons/sprite.svg#phone");
+  mask-repeat: no-repeat;
+  mask-size: 25px 24px;
+  top: 11px;
+  right: 7px;
+
+  @media (--not-mobile) {
+    right: 26px;
+  }
+
+  @media (--desktop) {
+    right: 8px;
+  }
+}
