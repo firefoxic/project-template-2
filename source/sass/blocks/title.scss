@@ -1,16 +1,16 @@
 .title {
-  color: var(--main-color);
-  font-size: 25px;
-  line-height: 30px;
-  font-weight: 700;
+	color: var(--main-color);
+	font-size: 25px;
+	line-height: 30px;
+	font-weight: 700;
 
-  @media (--not-mobile) {
-    font-size: 43px;
-    line-height: 50px;
-  }
+	@media (--not-mobile) {
+		font-size: 43px;
+		line-height: 50px;
+	}
 
-  @media (--desktop) {
-    font-size: 53px;
-    line-height: 57px;
-  }
+	@media (--desktop) {
+		font-size: 53px;
+		line-height: 57px;
+	}
 }

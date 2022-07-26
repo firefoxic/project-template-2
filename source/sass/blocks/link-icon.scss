@@ -1,28 +1,28 @@
 .link-icon {
-  display: inline-block;
-  height: 18px;
-  background-color: var(--main-color);
-  mask: var(--icon) no-repeat center/cover;
-  opacity: 0.2;
-  margin-right: 25px;
+	display: inline-block;
+	height: 18px;
+	background-color: var(--main-color);
+	mask: var(--icon) no-repeat center/cover;
+	opacity: 0.2;
+	margin-right: 25px;
 
-  &--icon_search {
-    --icon: url("../../icons/sprite.svg#search");
-    width: 18px;
+	&--icon_search {
+		--icon: url("../../icons/sprite.svg#search");
+		width: 18px;
 
-    @media (--not-mobile) {
-      margin-right: 0;
-      width: 18px;
-    }
-  }
+		@media (--not-mobile) {
+			margin-right: 0;
+			width: 18px;
+		}
+	}
 
-  &--icon_cart {
-    width: 21px;
-    height: 21px;
-    --icon: url("../../icons/sprite.svg#cart");
+	&--icon_cart {
+		width: 21px;
+		height: 21px;
+		--icon: url("../../icons/sprite.svg#cart");
 
-    @media (--not-mobile) {
-      margin-right: 30px;
-    }
-  }
+		@media (--not-mobile) {
+			margin-right: 30px;
+		}
+	}
 }

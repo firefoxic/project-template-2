@@ -1,19 +1,19 @@
 .product-details {
-  line-height: 20px;
+	line-height: 20px;
 }
 
 .product-details__value {
-  margin: 0;
+	margin: 0;
 }
 
 .product-details__item {
-  display: grid;
-  grid-template-columns: 97px 1fr;
-  border-bottom: 1px solid #ececec;
-  padding-bottom: 12px;
-  margin-bottom: 7px;
+	display: grid;
+	grid-template-columns: 97px 1fr;
+	border-bottom: 1px solid #ececec;
+	padding-bottom: 12px;
+	margin-bottom: 7px;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+	&:last-child {
+		margin-bottom: 0;
+	}
 }

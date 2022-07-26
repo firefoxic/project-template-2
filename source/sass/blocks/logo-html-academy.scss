@@ -1,28 +1,28 @@
 .logo-html-academy {
-  &::before {
-    display: block;
-    content: "";
-    width: 27px;
-    height: 34px;
-    mask: url("../../icons/sprite.svg#htmlacademy") no-repeat center / cover;
-    background: var(--accent-color);
-    background-size: 27px 34px;
-  }
+	&::before {
+		display: block;
+		content: "";
+		width: 27px;
+		height: 34px;
+		mask: url("../../icons/sprite.svg#htmlacademy") no-repeat center / cover;
+		background: var(--accent-color);
+		background-size: 27px 34px;
+	}
 
-  &:hover::before {
-    background: #46c1ae;
-  }
+	&:hover::before {
+		background: #46c1ae;
+	}
 
-  &:active::before {
-    background: #46c1ae;
-    opacity: 0.3;
-  }
+	&:active::before {
+		background: #46c1ae;
+		opacity: 0.3;
+	}
 
-  &:focus-visible {
-    outline-offset: 4px;
-  }
+	&:focus-visible {
+		outline-offset: 4px;
+	}
 
-  &:focus-visible::before {
-    background: #46c1ae;
-  }
+	&:focus-visible::before {
+		background: #46c1ae;
+	}
 }

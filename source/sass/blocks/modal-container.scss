@@ -1,22 +1,22 @@
 .modal-container {
-  &__wrapper {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
-    mix-blend-mode: normal;
-    z-index: 11;
-  }
+	&__wrapper {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(255, 255, 255, 0.9);
+		mix-blend-mode: normal;
+		z-index: 11;
+	}
 
-  &__content {
-    background: #ffffff;
-    mix-blend-mode: normal;
-    border: 1px solid #c6c6c6;
-    box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
-  }
+	&__content {
+		background: #ffffff;
+		mix-blend-mode: normal;
+		border: 1px solid #c6c6c6;
+		box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+	}
 }

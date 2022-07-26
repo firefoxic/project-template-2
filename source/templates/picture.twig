@@ -2,40 +2,48 @@
 {% set formats = isDevelopment ? [image.ext] : ["avif", "webp", image.ext] %}
 {% set densities = range(1, image.maxdppx, 1) %}
 <picture>
-  {% for format in formats -%}
+	{% for format in formats -%}
 
-    {% for vp in image.viewports -%}
+		{% for vp in image.viewports -%}
 
-      {% if format != image.ext or not loop.last -%}
-        <source
-          srcset="
-            {%- for dppx in densities -%}
-              img/{{ name }}-{{ vp }}@{{ dppx }}x.{{ format }} {{ dppx }}x{% if dppx != image.maxdppx %}, {% endif %}
-            {%- endfor -%}
-          "
-          type="image/{{ format }}"
-          {% if viewports[vp] -%}
-            media="(min-width: {{ viewports[vp] }}px)"
-          {%- endif -%}
-        >
-      {% else -%}
-        <img
-          class="{{ class }}"
-          src="img/{{ name }}-{{ vp }}@1x.{{ image.ext }}"
-          srcset="
-            {%- for dppx in densities if dppx != 1 -%}
-              img/{{ name }}-{{ vp }}@{{ dppx }}x.{{ image.ext }} {{ dppx }}x
-              {%- if dppx != image.maxdppx -%}, {% endif -%}
-            {%- endfor -%}
-          "
-          {% if image.width %}width="{{ image.width }}" {% endif -%}
-          {% if image.height %}height="{{ image.height }}" {% endif -%}
-          alt="{{ image.alt }}"
-        >
+			{% if format != image.ext or not loop.last -%}
 
-      {% endif -%}
+				<source
+					srcset="
+						{%- for dppx in densities -%}
+							img/{{ name }}-{{ vp }}@{{ dppx }}x.{{ format }} {{ dppx }}x
+							{%- if dppx != image.maxdppx %}, {% endif -%}
+						{%- endfor -%}
+					"
+					type="image/{{ format }}"
+					{% if viewports[vp] -%}
+						media="(min-width: {{ viewports[vp] }}px)"
+					{%- endif -%}
+				>
 
-    {%- endfor -%}
+			{% else -%}
 
-  {% endfor %}
+				<img
+					class="{{ class }}"
+					src="img/{{ name }}-{{ vp }}@1x.{{ image.ext }}"
+					srcset="
+						{%- for dppx in densities if dppx != 1 -%}
+							img/{{ name }}-{{ vp }}@{{ dppx }}x.{{ image.ext }} {{ dppx }}x
+							{%- if dppx != image.maxdppx -%}, {% endif -%}
+						{%- endfor -%}
+					"
+					{% if image.width %}
+						width="{{ image.width }}"
+					{% endif -%}
+					{% if image.height %}
+						height="{{ image.height }}"
+					{% endif -%}
+					alt="{{ image.alt }}"
+				>
+
+			{% endif -%}
+
+		{%- endfor -%}
+
+	{% endfor %}
 </picture>

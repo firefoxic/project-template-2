@@ -1,38 +1,38 @@
 .optional-list {
-  display: none;
-  padding: 0;
+	display: none;
+	padding: 0;
 
-  @media (--desktop) {
-    display: grid;
-    grid-template-columns: 184px 1fr;
-    order: 3;
-    margin: 0;
-    font-size: 15px;
-  }
+	@media (--desktop) {
+		display: grid;
+		grid-template-columns: 184px 1fr;
+		order: 3;
+		margin: 0;
+		font-size: 15px;
+	}
 }
 
 .optional-list__item {
-  list-style-type: none;
+	list-style-type: none;
 
-  @media (--desktop) {
-    padding-top: 15px;
-    padding-left: 35px;
+	@media (--desktop) {
+		padding-top: 15px;
+		padding-left: 35px;
 
-    &:nth-child(odd) {
-      padding-left: 0;
-    }
-  }
+		&:nth-child(odd) {
+			padding-left: 0;
+		}
+	}
 }
 
 .optional-list__link {
-  color: var(--main-color);
-  text-decoration: none;
+	color: var(--main-color);
+	text-decoration: none;
 
-  &:hover {
-    opacity: 0.6;
-  }
+	&:hover {
+		opacity: 0.6;
+	}
 
-  &:active {
-    opacity: 0.3;
-  }
+	&:active {
+		opacity: 0.3;
+	}
 }

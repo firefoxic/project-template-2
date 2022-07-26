@@ -3,119 +3,119 @@
 {% extends "./templates/_layout.twig" %}
 
 {% block main %}
-  <!--Первый экран-->
-  <main class="main-content">
-    <section class="main-content__main-screen main-screen">
-      <h1 class="page__centerer main-screen__main-title">Милые штуки ручной<span class="main-screen__main-title-wrapper">работы для дома<span></span></h1>
-      <div class="page__centerer page__centerer--mobile_off">
-        <ul class="main-screen__product product-list">
-          <li class="product-list__item">
-            <a class="product-list__link product-list__link--interior" href="">
-              <span class="page__centerer page__centerer--mobile_on">Предметы интерьера</span>
-            </a>
-          </li>
-          <li class="product-list__item">
-            <a class="product-list__link product-list__link--toys" href="">
-              <span class="page__centerer page__centerer--mobile_on">Детские игрушки</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
+<!--Первый экран-->
+<main class="main-content">
+	<section class="main-content__main-screen main-screen">
+		<h1 class="page__centerer main-screen__main-title">Милые штуки ручной<span class="main-screen__main-title-wrapper">работы для дома<span></span></h1>
+		<div class="page__centerer page__centerer--mobile_off">
+			<ul class="main-screen__product product-list">
+				<li class="product-list__item">
+					<a class="product-list__link product-list__link--interior" href="">
+						<span class="page__centerer page__centerer--mobile_on">Предметы интерьера</span>
+					</a>
+				</li>
+				<li class="product-list__item">
+					<a class="product-list__link product-list__link--toys" href="">
+						<span class="page__centerer page__centerer--mobile_on">Детские игрушки</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
 
-  <!--Карточка товара недели-->
-    <section class="page__centerer main-content__popular-product popular-product">
-      <h2 class="popular-product__title title">Вязаные корзинки</h2>
-      <b class="popular-product__hit">Товар недели</b>
-      <p class="popular-product__description">Экологически чистая пряжа, ручная работа. Доступны в&nbsp;шести расцветках и&nbsp;трёх размерах.</p>
-      <dl class="popular-product__characteristic product-details">
-        <div class="product-details__item">
-          <dt class="product-details__property">Цвет:</dt>
-          <dd class="product-details__value">тиффани/серый</dd>
-        </div>
-        <div class="product-details__item">
-          <dt class="product-details__property">Диаметр:</dt>
-          <dd class="product-details__value">25 см</dd>
-        </div>
-        <div class="product-details__item">
-          <dt class="product-details__property">Высота:</dt>
-          <dd class="product-details__value">15 см</dd>
-        </div>
-      </dl>
-      <div class="popular-product__wrapper-image">
-        {% include "./templates/picture.twig" with {name: "product-hit", class: "popular-product__image"} %}
-      </div>
-      <p class="popular-product__price">Цена: 990 руб.</p>
-      <a class="popular-product__button button" href="#">Заказать</a>
-    </section>
+	<!--Карточка товара недели-->
+	<section class="page__centerer main-content__popular-product popular-product">
+		<h2 class="popular-product__title title">Вязаные корзинки</h2>
+		<b class="popular-product__hit">Товар недели</b>
+		<p class="popular-product__description">Экологически чистая пряжа, ручная работа. Доступны в&nbsp;шести расцветках и&nbsp;трёх размерах.</p>
+		<dl class="popular-product__characteristic product-details">
+			<div class="product-details__item">
+				<dt class="product-details__property">Цвет:</dt>
+				<dd class="product-details__value">тиффани/серый</dd>
+			</div>
+			<div class="product-details__item">
+				<dt class="product-details__property">Диаметр:</dt>
+				<dd class="product-details__value">25 см</dd>
+			</div>
+			<div class="product-details__item">
+				<dt class="product-details__property">Высота:</dt>
+				<dd class="product-details__value">15 см</dd>
+			</div>
+		</dl>
+		<div class="popular-product__wrapper-image">
+			{% include "./templates/picture.twig" with {name: "product-hit", class: "popular-product__image"} %}
+		</div>
+		<p class="popular-product__price">Цена: 990 руб.</p>
+		<a class="popular-product__button button" href="#">Заказать</a>
+	</section>
 
-  <!--Раздел с преимуществами-->
-    <section class="page__centerer main-content__advantages advantages">
-      <h2 class="advantages__title title">Коротко о нас:</h2>
-      <ul class="advantages__list">
-        <li class="advantages__item advantages__item--icon_flower">Экологически<br> чистые материалы</li>
-        <li class="advantages__item advantages__item--icon_clew">Связано вручную<br> с&nbsp;любовью и&nbsp;умилением</li>
-        <li class="advantages__item advantages__item--icon_banknote">Скандинавский стиль по&nbsp;российской цене</li>
-        <li class="advantages__item advantages__item--icon_rocket">Поддержка отечественного производителя</li>
-        <li class="advantages__item advantages__item--icon_heart">Увеличивает лайки на&nbsp;фотографиях</li>
-        <li class="advantages__item advantages__item--icon_present">Поставляется<br> в&nbsp;подарочной упаковке</li>
-      </ul>
-    </section>
+	<!--Раздел с преимуществами-->
+	<section class="page__centerer main-content__advantages advantages">
+		<h2 class="advantages__title title">Коротко о нас:</h2>
+		<ul class="advantages__list">
+			<li class="advantages__item advantages__item--icon_flower">Экологически<br> чистые материалы</li>
+			<li class="advantages__item advantages__item--icon_clew">Связано вручную<br> с&nbsp;любовью и&nbsp;умилением</li>
+			<li class="advantages__item advantages__item--icon_banknote">Скандинавский стиль по&nbsp;российской цене</li>
+			<li class="advantages__item advantages__item--icon_rocket">Поддержка отечественного производителя</li>
+			<li class="advantages__item advantages__item--icon_heart">Увеличивает лайки на&nbsp;фотографиях</li>
+			<li class="advantages__item advantages__item--icon_present">Поставляется<br> в&nbsp;подарочной упаковке</li>
+		</ul>
+	</section>
 
-  <!--Раздел с отзывами-->
-    <section class="page__centerer main-content__feedback feedback">
-      <h2 class="feedback__title title">Отзывы</h2>
-      <figure class="feedback__item">
-        <blockquote class="feedback__text">
-          Я молодая мама, но всё равно фотографии не набирали и&nbsp;близко такого количества лайков, как у&nbsp;популярных инстамамочек. В&nbsp;отчаянии, я накупила аксессуаров и&nbsp;игрушек в&nbsp;Мишке, и&nbsp;мои фотографии сразу стали более стильными, а&nbsp;также набирают больше лайков!
-        </blockquote>
-        <figcaption class="feedback__author-name">Анастасия Красильникова
-          <a class="feedback__author-link" href="#">@misssssiskras</a>
-        </figcaption>
-      </figure>
-      <p class="feedback__toogles slider-toogles">
-        <button class="slider-toogles__icon" type="button">
-          <span class="visually-hidden">Предыдущий отзыв</span>
-        </button>
-        <button class="slider-toogles__icon slider-toogles__icon_next" type="button">
-          <span class="visually-hidden">Следующий отзыв</span>
-        </button>
-      </p>
-      <a class="feedback__button button" href="#">Написать</a>
-    </section>
+	<!--Раздел с отзывами-->
+	<section class="page__centerer main-content__feedback feedback">
+		<h2 class="feedback__title title">Отзывы</h2>
+		<figure class="feedback__item">
+			<blockquote class="feedback__text">
+				Я молодая мама, но всё равно фотографии не набирали и&nbsp;близко такого количества лайков, как у&nbsp;популярных инстамамочек. В&nbsp;отчаянии, я накупила аксессуаров и&nbsp;игрушек в&nbsp;Мишке, и&nbsp;мои фотографии сразу стали более стильными, а&nbsp;также набирают больше лайков!
+			</blockquote>
+			<figcaption class="feedback__author-name">Анастасия Красильникова
+				<a class="feedback__author-link" href="#">@misssssiskras</a>
+			</figcaption>
+		</figure>
+		<p class="feedback__toogles slider-toogles">
+			<button class="slider-toogles__icon" type="button">
+				<span class="visually-hidden">Предыдущий отзыв</span>
+			</button>
+			<button class="slider-toogles__icon slider-toogles__icon_next" type="button">
+				<span class="visually-hidden">Следующий отзыв</span>
+			</button>
+		</p>
+		<a class="feedback__button button" href="#">Написать</a>
+	</section>
 
-  <!--Контактная информация-->
-    <div class="page__centerer page__centerer--desktop_on">
-      <section class="main-content__contacts contacts">
-        <div class="contacts__wrapper">
-          <div class="page__centerer page__centerer--desktop_off">
-            <h2 class="contacts__title title">Контакты</h2>
-            <dl class="contacts__list">
-              <div class="contacts__wrapper-email">
-                <dt class="contacts__property">e-mail:</dt>
-                <dd class="contacts__value">
-                  <a class="contacts__email" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
-                </dd>
-              </div>
-              <div class="contacts__wrapper-address">
-                <dt class="contacts__property">адрес:</dt>
-                <dd class="contacts__value">г. Санкт-Петербург<br>ул. Большая Конюшенная<br> д. 19/8, офис 101</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-        <div class="contacts__map-wrapper">
-          <iframe class="contacts__map contacts__map-js" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253003174!2d30.320858716201972!3d59.93871916905406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1653068420118!5m2!1sru!2sru" width="320" height="454" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Магазин по адресу: улица Большая Конюшенная дом 19/8 офис 101, город Санкт-Петербург "></iframe>
-          <noscript class="contacts__map-nojs">
-            {% include "./templates/picture.twig" with {name: "map", class: "contacts__map"} %}
-          </noscript>
-        </div>
-        <div class="page__centerer contacts__button">
-          <a class="button" href="#">Напишите нам</a>
-        </div>
-      </section>
-    </div>
+	<!--Контактная информация-->
+	<div class="page__centerer page__centerer--desktop_on">
+		<section class="main-content__contacts contacts">
+			<div class="contacts__wrapper">
+				<div class="page__centerer page__centerer--desktop_off">
+					<h2 class="contacts__title title">Контакты</h2>
+					<dl class="contacts__list">
+						<div class="contacts__wrapper-email">
+							<dt class="contacts__property">e-mail:</dt>
+							<dd class="contacts__value">
+								<a class="contacts__email" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+							</dd>
+						</div>
+						<div class="contacts__wrapper-address">
+							<dt class="contacts__property">адрес:</dt>
+							<dd class="contacts__value">г. Санкт-Петербург<br>ул. Большая Конюшенная<br> д. 19/8, офис 101</dd>
+						</div>
+					</dl>
+				</div>
+			</div>
+			<div class="contacts__map-wrapper">
+				<iframe class="contacts__map contacts__map-js" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253003174!2d30.320858716201972!3d59.93871916905406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1653068420118!5m2!1sru!2sru" width="320" height="454" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Магазин по адресу: улица Большая Конюшенная дом 19/8 офис 101, город Санкт-Петербург "></iframe>
+				<noscript class="contacts__map-nojs">
+					{% include "./templates/picture.twig" with {name: "map", class: "contacts__map"} %}
+				</noscript>
+			</div>
+			<div class="page__centerer contacts__button">
+				<a class="button" href="#">Напишите нам</a>
+			</div>
+		</section>
+	</div>
 
-  </main>
+</main>
 
 {% endblock %}

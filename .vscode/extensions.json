@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"atishay-jain.all-autocomplete",
+		"editorconfig.editorconfig",
+		"mhutchie.git-graph",
+		"anteprimorac.html-end-tag-labels",
+		"stylelint.vscode-stylelint",
+		"vitaliymaz.vscode-svg-previewer",
+		"bajdzis.vscode-twig-pack"
+	]
+}

@@ -1,66 +1,66 @@
 .main-screen {
-  background-image: url("../../img/main-screen-mobile@1x.jpg");
-  background-color: #f9f9f9;
-  background-repeat: no-repeat;
-  background-size: 568px auto;
-  background-position: 50% -18px;
-  width: 100%;
-  padding-top: 105px;
-  color: var(--main-color);
+	background-image: url("../../img/main-screen-mobile@1x.jpg");
+	background-color: #f9f9f9;
+	background-repeat: no-repeat;
+	background-size: 568px auto;
+	background-position: 50% -18px;
+	width: 100%;
+	padding-top: 105px;
+	color: var(--main-color);
 
-  @media (min-resolution: 2dppx) {
-    background-image: url("../../img/main-screen-mobile@2x.jpg");
-    background-size: 568px auto;
-  }
+	@media (min-resolution: 2dppx) {
+		background-image: url("../../img/main-screen-mobile@2x.jpg");
+		background-size: 568px auto;
+	}
 
-  @media (--not-mobile) {
-    background-image: url("../../img/main-screen-desktop@1x.jpg");
-    background-size: 1150px auto;
-    background-position: 50% -50px;
+	@media (--not-mobile) {
+		background-image: url("../../img/main-screen-desktop@1x.jpg");
+		background-size: 1150px auto;
+		background-position: 50% -50px;
 
-    @media (min-resolution: 2dppx) {
-      background-image: url("../../img/main-screen-desktop@2x.jpg");
-    }
-  }
+		@media (min-resolution: 2dppx) {
+			background-image: url("../../img/main-screen-desktop@2x.jpg");
+		}
+	}
 
-  @media (--desktop) {
-    background-position: 50% -45px;
-    background-size: contain;
-    padding-top: 112px;
-  }
+	@media (--desktop) {
+		background-position: 50% -45px;
+		background-size: contain;
+		padding-top: 112px;
+	}
 }
 
 .main-screen__main-title {
-  margin-bottom: 120px;
-  font-size: 27px;
-  font-weight: 700;
-  line-height: 30px;
-  text-align: center;
+	margin-bottom: 120px;
+	font-size: 27px;
+	font-weight: 700;
+	line-height: 30px;
+	text-align: center;
 
-  @media (--not-mobile) {
-    font-size: 43px;
-    line-height: 50px;
-  }
+	@media (--not-mobile) {
+		font-size: 43px;
+		line-height: 50px;
+	}
 
-  @media (--desktop) {
-    font-size: 53px;
-    line-height: 57px;
-  }
+	@media (--desktop) {
+		font-size: 53px;
+		line-height: 57px;
+	}
 }
 
 .main-screen__main-title-wrapper {
-  display: block;
+	display: block;
 }
 
 .main-screen__product {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 
-  @media (--not-mobile) {
-    margin-top: 372px;
-  }
+	@media (--not-mobile) {
+		margin-top: 372px;
+	}
 
-  @media (--desktop) {
-    margin-top: 355px;
-  }
+	@media (--desktop) {
+		margin-top: 355px;
+	}
 }

@@ -1,58 +1,58 @@
 {
-  "name": "mishka-template",
-  "private": true,
-  "description": "Личный проект «Мишка» от HTML Academy",
-  "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.0.x",
-    "autoprefixer": "10.4.x",
-    "browser-sync": "2.27.x",
-    "del": "7.0.x",
-    "gulp": "4.0.x",
-    "gulp-dart-sass": "1.0.x",
-    "gulp-htmlmin": "5.0.x",
-    "gulp-if": "3.0.x",
-    "gulp-libsquoosh": "1.0.x",
-    "gulp-plumber": "1.2.x",
-    "gulp-postcss": "9.0.x",
-    "gulp-svg-sprite": "1.5.x",
-    "gulp-terser": "2.1.x",
-    "gulp-twig": "1.2.x",
-    "gulp-w3c-html-validator": "5.1.x",
-    "postcss": "8.4.x",
-    "postcss-csso": "6.0.x",
-    "postcss-custom-media": "8.0.x",
-    "postcss-import": "14.1.x",
-    "postcss-scss": "4.0.x",
-    "postcss-url": "10.1.x",
-    "pre-commit": "1.2.x",
-    "stylelint": "14.9.x"
-  },
-  "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\"",
-    "lint": "npm run editorconfig && npm run stylelint && gulp validateMarkup",
-    "build": "gulp build",
-    "start": "gulp"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all",
-    "not < 0.2%"
-  ],
-  "editorconfig-cli": [
-    "*.json",
-    "*.js",
-    "source/**/*.html",
-    "source/**/*.twig",
-    "source/**/*.js",
-    "source/**/*.svg",
-    "source/sass/**/*.scss"
-  ],
-  "engines": {
-    "node": "16.x"
-  },
-  "type": "module",
-  "pre-commit": "lint"
+	"name": "mishka-template",
+	"private": true,
+	"description": "Личный проект «Мишка» от HTML Academy",
+	"devDependencies": {
+		"@htmlacademy/editorconfig-cli": "1.0.x",
+		"autoprefixer": "10.4.x",
+		"browser-sync": "2.27.x",
+		"del": "7.0.x",
+		"gulp": "4.0.x",
+		"gulp-dart-sass": "1.0.x",
+		"gulp-htmlmin": "5.0.x",
+		"gulp-if": "3.0.x",
+		"gulp-libsquoosh": "1.0.x",
+		"gulp-plumber": "1.2.x",
+		"gulp-postcss": "9.0.x",
+		"gulp-svg-sprite": "1.5.x",
+		"gulp-terser": "2.1.x",
+		"gulp-twig": "1.2.x",
+		"gulp-w3c-html-validator": "5.1.x",
+		"postcss": "8.4.x",
+		"postcss-csso": "6.0.x",
+		"postcss-custom-media": "8.0.x",
+		"postcss-import": "14.1.x",
+		"postcss-scss": "4.0.x",
+		"postcss-url": "10.1.x",
+		"pre-commit": "1.2.x",
+		"stylelint": "14.9.x"
+	},
+	"scripts": {
+		"editorconfig": "editorconfig-cli",
+		"stylelint": "stylelint \"source/sass/**/*.scss\"",
+		"lint": "npm run editorconfig && npm run stylelint && gulp validateMarkup",
+		"build": "gulp build",
+		"start": "gulp"
+	},
+	"browserslist": [
+		"last 2 versions",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all",
+		"not < 0.2%"
+	],
+	"editorconfig-cli": [
+		"*.json",
+		"*.js",
+		"source/**/*.html",
+		"source/**/*.twig",
+		"source/**/*.js",
+		"source/**/*.svg",
+		"source/sass/**/*.scss"
+	],
+	"engines": {
+		"node": "16.x"
+	},
+	"type": "module",
+	"pre-commit": "lint"
 }
