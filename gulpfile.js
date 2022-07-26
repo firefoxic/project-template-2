@@ -30,7 +30,7 @@ export function processMarkup () {
     .pipe(htmlmin({ collapseWhitespace: !data.isDevelopment }))
     .pipe(dest("./build"))
     .pipe(gulpIf(data.isLinting, htmlValidator.analyzer()))
-    .pipe(gulpIf(data.isLinting, htmlValidator.reporter()));
+    .pipe(gulpIf(data.isLinting, htmlValidator.reporter({ throwErrors: true })));
 }
 
 export function validateMarkup (done) {
