@@ -24,6 +24,7 @@
     "postcss-import": "14.1.x",
     "postcss-scss": "4.0.x",
     "postcss-url": "10.1.x",
+    "pre-commit": "1.2.x",
     "stylelint": "14.9.x"
   },
   "scripts": {
@@ -52,5 +53,6 @@
   "engines": {
     "node": "16.x"
   },
-  "type": "module"
+  "type": "module",
+  "pre-commit": "lint"
 }
