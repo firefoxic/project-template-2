@@ -5,6 +5,7 @@ import data from "./source/templates/_data.js";
 import twig from "gulp-twig";
 import htmlmin from "gulp-htmlmin";
 import { htmlValidator } from "gulp-w3c-html-validator";
+import bemlinter from "gulp-html-bemlinter";
 import sass from "gulp-dart-sass";
 import svgSprite from "gulp-svg-sprite";
 import postcss from "gulp-postcss";
@@ -30,7 +31,8 @@ export function processMarkup() {
 		.pipe(htmlmin({ collapseWhitespace: !data.isDevelopment }))
 		.pipe(dest("./build"))
 		.pipe(gulpIf(data.isLinting, htmlValidator.analyzer()))
-		.pipe(gulpIf(data.isLinting, htmlValidator.reporter({ throwErrors: true })));
+		.pipe(gulpIf(data.isLinting, htmlValidator.reporter({ throwErrors: true })))
+		.pipe(gulpIf(data.isLinting, bemlinter()));
 }
 
 export function validateMarkup(done) {
