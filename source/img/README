@@ -1,0 +1,22 @@
+# Папка для изображений
+
+Структура файлов:
+
+```bash
+./
+├── products
+│   ├── product1-desktop@1x.jpg
+│   ├── product1-desktop@2x.jpg
+│   ├── product1-mobile@1x.jpg
+│   ├── product1-mobile@2x.jpg
+│   ├── product1-tablet@1x.jpg
+│   └── product1-tablet@2x.jpg
+├── logo.svg
+├── map-desktop@1x.png
+├── map-desktop@2x.png
+├── map-mobile@1x.png
+├── map-mobile@2x.png
+├── map-tablet@1x.png
+├── map-tablet@2x.png
+└── README
+```

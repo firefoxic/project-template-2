@@ -1,0 +1,18 @@
+# Папка для стилей
+
+Структура файлов:
+
+```bash
+./
+├── blocks
+│   ├── button.scss
+│   ├── link.scss
+│   └── page.scss
+├── global
+│   ├── fonts.scss
+│   ├── global.scss
+│   ├── media.scss
+│   └── variables.scss
+├── style.scss
+└── README
+```
