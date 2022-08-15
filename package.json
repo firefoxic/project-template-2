@@ -31,7 +31,7 @@
 	"scripts": {
 		"editorconfig": "editorconfig-cli",
 		"stylelint": "stylelint \"source/sass/**/*.scss\"",
-		"lint": "npm run editorconfig && npm run stylelint && gulp validateMarkup",
+		"lint": "npm run editorconfig && npm run stylelint && gulp validateMarkup --silent",
 		"build": "gulp build",
 		"start": "gulp"
 	},
