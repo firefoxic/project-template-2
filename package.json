@@ -22,7 +22,6 @@
 		"postcss": "8.4.x",
 		"postcss-csso": "6.0.x",
 		"postcss-custom-media": "8.0.x",
-		"postcss-import": "14.1.x",
 		"postcss-scss": "4.0.x",
 		"postcss-url": "10.1.x",
 		"pre-commit": "1.2.x",

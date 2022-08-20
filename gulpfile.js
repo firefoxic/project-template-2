@@ -10,8 +10,6 @@ import sass from "gulp-dart-sass";
 import svgSprite from "gulp-svg-sprite";
 import postcss from "gulp-postcss";
 import postUrl from "postcss-url";
-import postImport from "postcss-import";
-import postScss from "postcss-scss";
 import postCustomMedia from "postcss-custom-media";
 import autoprefixer from "autoprefixer";
 import csso from "postcss-csso";
@@ -43,13 +41,10 @@ export function validateMarkup(done) {
 export function processStyles() {
 	return src("./source/sass/*.scss", { sourcemaps: data.isDevelopment })
 		.pipe(plumber())
-		.pipe(postcss([
-			postImport(),
-			postUrl(),
-			postCustomMedia()
-		], { syntax: postScss }))
 		.pipe(sass().on("error", sass.logError))
 		.pipe(postcss([
+			postUrl({ assetsPath: "../" }),
+			postCustomMedia(),
 			autoprefixer(),
 			csso()
 		]))
