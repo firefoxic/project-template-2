@@ -8,13 +8,13 @@
 		"browser-sync": "2.27.x",
 		"del": "7.0.x",
 		"gulp": "4.0.x",
-		"gulp-dart-sass": "1.0.x",
 		"gulp-html-bemlinter": "2.1.x",
 		"gulp-htmlmin": "5.0.x",
 		"gulp-if": "3.0.x",
 		"gulp-libsquoosh": "1.0.x",
 		"gulp-plumber": "1.2.x",
 		"gulp-postcss": "9.0.x",
+		"gulp-sass": "5.1.x",
 		"gulp-svg-sprite": "1.5.x",
 		"gulp-terser": "2.1.x",
 		"gulp-twig": "1.2.x",
@@ -25,6 +25,7 @@
 		"postcss-scss": "4.0.x",
 		"postcss-url": "10.1.x",
 		"pre-commit": "1.2.x",
+		"sass": "1.54.x",
 		"stylelint": "14.10.x"
 	},
 	"scripts": {

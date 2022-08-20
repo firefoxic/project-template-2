@@ -6,7 +6,8 @@ import twig from "gulp-twig";
 import htmlmin from "gulp-htmlmin";
 import { htmlValidator } from "gulp-w3c-html-validator";
 import bemlinter from "gulp-html-bemlinter";
-import sass from "gulp-dart-sass";
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
 import svgSprite from "gulp-svg-sprite";
 import postcss from "gulp-postcss";
 import postUrl from "postcss-url";
@@ -19,6 +20,8 @@ import { deleteAsync } from "del";
 import gulpIf from "gulp-if";
 
 const { src, dest, watch, series, parallel } = gulp;
+const sass = gulpSass(dartSass);
+
 data.isDevelopment = true;
 
 export function processMarkup() {
