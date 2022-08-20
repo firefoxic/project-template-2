@@ -42,9 +42,22 @@ export function validateMarkup(done) {
 }
 
 export function processStyles() {
+	const sassOptions = {
+		functions: {
+			"getext($name)": (name) => new dartSass.types.String(data.images[name.getValue()].ext),
+			"getmaxdppx($name)": (name) => new dartSass.types.Number(data.images[name.getValue()].maxdppx),
+			"getviewports($name)": function (name) {
+				let [...vps] = data.images[name.getValue()].viewports;
+				let viewports = new dartSass.types.List(vps.length);
+				vps.reverse().forEach((vp, i) => { viewports.setValue(i, new dartSass.types.String(vp)) });
+				return viewports;
+			}
+		}
+	}
+
 	return src("./source/sass/*.scss", { sourcemaps: data.isDevelopment })
 		.pipe(plumber())
-		.pipe(sass().on("error", sass.logError))
+		.pipe(sass(sassOptions).on("error", sass.logError))
 		.pipe(postcss([
 			postUrl({ assetsPath: "../" }),
 			postCustomMedia(),
