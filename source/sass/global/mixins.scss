@@ -1,0 +1,42 @@
+@mixin bg-adaptive($name, $format) {
+	@each $viewport in getviewports($name) {
+		$media-query: null;
+
+		@if $viewport == mobile {
+			$media-query: all;
+		}
+
+		@if $viewport == tablet {
+			$media-query: $not-mobile;
+		}
+
+		@if $viewport == desktop {
+			$media-query: $desktop-only;
+		}
+
+		@media #{$media-query} {
+			$dppx: 1;
+			$url: null;
+
+			@while $dppx <= getmaxdppx($name) {
+				$url: $url, url("../../img/#{$name}-#{$viewport}@#{$dppx}x.#{$format}") #{$dppx}x;
+				$dppx: $dppx + 1;
+			}
+			background-image: image-set($url);
+		}
+	}
+}
+
+@mixin bg-universal($name) {
+	$formats: getext($name), webp, avif;
+	$image-set-webp: image-set(url("image.webp") 1x);
+	$image-set-avif: image-set(url("image.avif") 1x type("image/avif"));
+
+	@each $format in $formats {
+		$className: if(($format == webp) or ($format == avif), ".#{$format}", "");
+
+		#{$className} & {
+			@include bg-adaptive($name, $format);
+		}
+	}
+}
