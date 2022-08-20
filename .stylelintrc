@@ -15,21 +15,6 @@
 		],
 		"at-rule-name-case": "lower",
 		"at-rule-name-space-after": "always",
-		"at-rule-no-unknown": [
-			true,
-			{
-				"ignoreAtRules": [
-					"custom-media",
-					"use",
-					"mixin",
-					"define-mixin",
-					"include",
-					"content",
-					"rules",
-					"each"
-				]
-			}
-		],
 		"at-rule-no-vendor-prefix": true,
 		"at-rule-semicolon-newline-after": "always",
 		"block-closing-brace-empty-line-before": "never",
