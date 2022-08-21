@@ -1,7 +1,7 @@
 {
-	"name": "mishka-template",
+	"name": "project-template-2",
 	"private": true,
-	"description": "Личный проект «Мишка» от HTML Academy",
+	"description": "Шаблон проекта для студентов 2 курса",
 	"devDependencies": {
 		"@htmlacademy/editorconfig-cli": "1.0.x",
 		"autoprefixer": "10.4.x",

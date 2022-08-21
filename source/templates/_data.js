@@ -6,16 +6,16 @@ export default {
 		},
 		{
 			"path": "catalog.html",
-			"name": "Каталог товаров"
+			"name": "Каталог"
 		},
 		{
 			"path": "form.html",
-			"name": "Вязание на заказ"
+			"name": "Форма"
 		}
 	],
 	"viewports": {
-		"desktop": 1150,
-		"tablet": 768,
+		"desktop": 1280,
+		"tablet": 640,
 		"mobile": null
 	},
 	"images": {
