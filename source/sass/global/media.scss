@@ -1,5 +1,9 @@
-@custom-media --mobile-only (max-width: 767.9px);
-@custom-media --tablet-only (min-width:768px) and (max-width: 1149.9px);
-@custom-media --desktop-only (min-width:1150px);
-@custom-media --not-mobile (min-width:768px);
-@custom-media --not-desktop (max-width: 1149.9px);
+$breakpoint-tablet: getbreakpoint(tablet) * 1px;
+$breakpoint-desktop: getbreakpoint(desktop) * 1px;
+$breakpoint-gap: 0.01px;
+
+$mobile-only: "(max-width: #{$breakpoint-tablet - $breakpoint-gap})";
+$tablet-only: "(min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
+$desktop-only: "(min-width: #{$breakpoint-desktop})";
+$not-mobile: "(min-width: #{$breakpoint-tablet})";
+$not-desktop: "(max-width: #{$breakpoint-desktop - $breakpoint-gap})";

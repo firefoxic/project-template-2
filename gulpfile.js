@@ -11,7 +11,6 @@ import gulpSass from "gulp-sass";
 import svgSprite from "gulp-svg-sprite";
 import postcss from "gulp-postcss";
 import postUrl from "postcss-url";
-import postCustomMedia from "postcss-custom-media";
 import autoprefixer from "autoprefixer";
 import csso from "postcss-csso";
 import terser from "gulp-terser";
@@ -44,6 +43,7 @@ export function validateMarkup(done) {
 export function processStyles() {
 	const sassOptions = {
 		functions: {
+			"getbreakpoint($bp)": (bp) => new dartSass.types.Number(data.viewports[bp.getValue()]),
 			"getext($name)": (name) => new dartSass.types.String(data.images[name.getValue()].ext),
 			"getmaxdppx($name)": (name) => new dartSass.types.Number(data.images[name.getValue()].maxdppx),
 			"getviewports($name)": function (name) {
@@ -60,7 +60,6 @@ export function processStyles() {
 		.pipe(sass(sassOptions).on("error", sass.logError))
 		.pipe(postcss([
 			postUrl({ assetsPath: "../" }),
-			postCustomMedia(),
 			autoprefixer(),
 			csso()
 		]))

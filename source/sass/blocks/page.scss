@@ -8,11 +8,11 @@
 .page__centerer {
 	margin: 0 30px;
 
-	@media (--not-mobile) {
+	@media #{$not-mobile} {
 		margin: 0 50px;
 	}
 
-	@media (--desktop) {
+	@media #{$desktop-only} {
 		width: 1050px;
 		margin: 0 auto;
 	}
