@@ -80,11 +80,6 @@ export function optimizeImages() {
 		.pipe(dest("build/img"))
 }
 
-export function copyImages() {
-	return src("./source/img/**/*.{png,jpg}")
-		.pipe(dest("build/img"))
-}
-
 export function createWebp(done) {
 	if (!data.isDevelopment) {
 		return src("./source/img/**/*.{jpg,png}")
