@@ -8,7 +8,7 @@ import { htmlValidator } from "gulp-w3c-html-validator";
 import bemlinter from "gulp-html-bemlinter";
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
-import svgSprite from "gulp-svg-sprite";
+import { stacksvg } from "gulp-stacksvg";
 import postcss from "gulp-postcss";
 import postUrl from "postcss-url";
 import autoprefixer from "autoprefixer";
@@ -100,15 +100,9 @@ export function createAvif(done) {
 	}
 }
 
-export function createSprite() {
-	return src("./source/icons/*.svg")
-		.pipe(svgSprite({
-			mode: {
-				stack: {
-					sprite: "../sprite.svg"
-				}
-			},
-		}))
+export function createStack() {
+	return src("./source/icons/**/*.svg")
+		.pipe(stacksvg())
 		.pipe(dest("./build/icons"));
 }
 
@@ -150,7 +144,7 @@ function watchFiles() {
 	watch("./source/sass/**/*.scss", series(processStyles));
 	watch("./source/js/*.js", series(processScripts, reloadServer));
 	watch(["./source/**/*.{html,twig}", "./source/**/_data.js"], series(processMarkup, reloadServer));
-	watch("./source/icons/**/*.svg", series(createSprite, reloadServer));
+	watch("./source/icons/**/*.svg", series(createStack, reloadServer));
 }
 
 export function compileProject(done) {
@@ -158,7 +152,7 @@ export function compileProject(done) {
 		processStyles,
 		processMarkup,
 		processScripts,
-		createSprite,
+		createStack,
 		copyAssets,
 		optimizeImages,
 		createWebp,

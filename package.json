@@ -15,7 +15,7 @@
 		"gulp-plumber": "1.2.x",
 		"gulp-postcss": "9.0.x",
 		"gulp-sass": "5.1.x",
-		"gulp-svg-sprite": "1.5.x",
+		"gulp-stacksvg": "1.0.x",
 		"gulp-terser": "2.1.x",
 		"gulp-twig": "1.2.x",
 		"gulp-w3c-html-validator": "5.1.x",
