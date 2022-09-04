@@ -25,7 +25,7 @@
 		"postcss-url": "10.1.x",
 		"pre-commit": "1.2.x",
 		"sass": "1.54.x",
-		"stylelint": "14.10.x"
+		"stylelint": "14.11.x"
 	},
 	"scripts": {
 		"editorconfig": "editorconfig-cli",
