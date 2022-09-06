@@ -16,7 +16,7 @@
 Пример использования шаблона для тега `picture`:
 
 ```twig
-{% include "./picture.twig" with {name: "image-name", class: "class__on-img-tag"} %}
+{% include "./picture.twig" with {name: "image-name", class: "class__on-img-tag", alt: "Альтернативный текст."} %}
 ```
 
 При этом в `_data.js` в поле `"images"` должно быть добавлено поле по названию изображения (в этом примере `"image-name"`) со всеми обязательными данными:
@@ -30,8 +30,6 @@
 	"height": 120,
 	// максимальная плотность пикселей
 	"maxdppx": 2,
-	// текст для атрибута alt
-	"alt": "Описание изображения.",
 	// нужные для этого изображения вьюпорты
 	"viewports": ["desktop", "tablet", "mobile"]
 }

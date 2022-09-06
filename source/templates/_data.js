@@ -24,7 +24,6 @@ export default {
 			"width": 320,
 			"height": 454,
 			"maxdppx": 2,
-			"alt": "Магазин по адресу: улица Большая Конюшенная дом 19/8 офис 101, город Санкт-Петербург.",
 			"viewports": ["desktop", "tablet", "mobile"]
 		},
 		"test": {
@@ -32,7 +31,6 @@ export default {
 			"width": 320,
 			"height": 320,
 			"maxdppx": 2,
-			"alt": "Тестовое изображение 320×320.",
 			"viewports": ["desktop", "tablet", "mobile"]
 		}
 	}
