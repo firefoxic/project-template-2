@@ -22,15 +22,16 @@
 				$url: $url, url("../../img/#{$name}-#{$viewport}@#{$dppx}x.#{$format}") #{$dppx}x;
 				$dppx: $dppx + 1;
 			}
-			background-image: image-set($url);
+			/* stylelint-disable-next-line value-no-vendor-prefix */
+			--bg-image: -webkit-image-set(#{$url});
 		}
 	}
 }
 
-@mixin bg-universal($name) {
+@mixin bg-image($name) {
 	$formats: getext($name), webp, avif;
 	$image-set-webp: image-set(url("image.webp") 1x);
-	$image-set-avif: image-set(url("image.avif") 1x type("image/avif"));
+	$image-set-avif: image-set(url("image.avif") 1x);
 
 	@each $format in $formats {
 		$className: if(($format == webp) or ($format == avif), ".#{$format}", "");

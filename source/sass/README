@@ -12,7 +12,20 @@
 │   ├── fonts.scss
 │   ├── global.scss
 │   ├── media.scss
+│   ├── mixins.scss
 │   └── variables.scss
 ├── style.scss
 └── README
 ```
+
+Для генерации фона для всех форматов, на всех вьюпортах и всех плотностях экрана используется миксин `bg-image()`. При вызове миксина нужно передать в него имя изображения, указанное в `_data.js`, а в `background` использовать кастомное свойство `--bg-image`, генерируемое миксином.
+
+```scss
+.block {
+	background: var(--bg-image) no-repeat center / contain;
+
+	@include bg-image("name");
+}
+```
+
+Чтобы сгенерированные стили для поддержки форматов _webp_ и _avif_ заработали, перед стилевым `link` в `head` должен быть вставлен скрипт детекта поддержки (шаблоном `detect-format.twig` он инклюдится в `_layout.twit`).
