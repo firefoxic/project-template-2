@@ -13,8 +13,9 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
+	background-image: var(--bg-image);
 
-	@include bg-universal(test);
+	@include bg-image(test);
 }
 
 .page__centerer {
