@@ -172,9 +172,11 @@ export function build(done) {
 
 // Development
 
-export default series(
-	removeBuild,
-	compileProject,
-	startServer,
-	watchFiles
-);
+export function runDev (done) {
+	series(
+		removeBuild,
+		compileProject,
+		startServer,
+		watchFiles
+	)(done);
+}
