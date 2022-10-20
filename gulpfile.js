@@ -23,7 +23,7 @@ const sass = gulpSass(dartSass);
 
 data.isDevelopment = true;
 
-export function processMarkup() {
+export function processMarkup () {
 	return src("./source/*.html")
 		.pipe(twig({
 			data: data
@@ -35,12 +35,12 @@ export function processMarkup() {
 		.pipe(gulpIf(data.isLinting, bemlinter()));
 }
 
-export function validateMarkup(done) {
+export function validateMarkup (done) {
 	data.isLinting = true;
 	series(processMarkup)(done);
 }
 
-export function processStyles() {
+export function processStyles () {
 	const sassOptions = {
 		functions: {
 			"getbreakpoint($bp)": (bp) => new dartSass.types.Number(data.viewports[bp.getValue()]),
@@ -67,20 +67,20 @@ export function processStyles() {
 		.pipe(browser.stream());
 }
 
-export function processScripts() {
+export function processScripts () {
 	return src("./source/js/*.js")
 		.pipe(terser())
 		.pipe(dest("./build/js"))
 		.pipe(browser.stream());
 }
 
-export function optimizeImages() {
+export function optimizeImages () {
 	return src("./source/img/**/*.{png,jpg}")
 		.pipe(gulpIf(!data.isDevelopment, squoosh()))
 		.pipe(dest("build/img"))
 }
 
-export function createWebp(done) {
+export function createWebp (done) {
 	if (!data.isDevelopment) {
 		return src("./source/img/**/*.{jpg,png}")
 			.pipe(squoosh({ webp: {} }))
@@ -90,7 +90,7 @@ export function createWebp(done) {
 	}
 }
 
-export function createAvif(done) {
+export function createAvif (done) {
 	if (!data.isDevelopment) {
 		return src("./source/img/**/*.{jpg,png}")
 			.pipe(squoosh({ avif: {} }))
@@ -100,13 +100,13 @@ export function createAvif(done) {
 	}
 }
 
-export function createStack() {
+export function createStack () {
 	return src("./source/icons/**/*.svg")
 		.pipe(stacksvg())
 		.pipe(dest("./build/icons"));
 }
 
-export function copyAssets() {
+export function copyAssets () {
 	return src([
 		"./source/fonts/*.{woff2,woff}",
 		"./source/*.ico",
@@ -119,7 +119,7 @@ export function copyAssets() {
 		.pipe(dest("./build"))
 }
 
-export function removeBuild() {
+export function removeBuild () {
 	return deleteAsync("./build");
 };
 
@@ -135,19 +135,19 @@ export function startServer(done) {
 	done();
 }
 
-function reloadServer(done) {
+function reloadServer (done) {
 	browser.reload();
 	done();
 }
 
-function watchFiles() {
+function watchFiles () {
 	watch("./source/sass/**/*.scss", series(processStyles));
 	watch("./source/js/*.js", series(processScripts, reloadServer));
 	watch(["./source/**/*.{html,twig}", "./source/**/_data.js"], series(processMarkup, reloadServer));
 	watch("./source/icons/**/*.svg", series(createStack, reloadServer));
 }
 
-export function compileProject(done) {
+export function compileProject (done) {
 	parallel(
 		processStyles,
 		processMarkup,
@@ -162,7 +162,7 @@ export function compileProject(done) {
 
 // Production
 
-export function build(done) {
+export function build (done) {
 	data.isDevelopment = false;
 	series(
 		removeBuild,
