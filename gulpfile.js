@@ -30,14 +30,17 @@ export function processMarkup () {
 		}))
 		.pipe(htmlmin({ collapseWhitespace: !data.isDevelopment }))
 		.pipe(dest("./build"))
-		.pipe(gulpIf(data.isLinting, htmlValidator.analyzer()))
-		.pipe(gulpIf(data.isLinting, htmlValidator.reporter({ throwErrors: true })))
-		.pipe(gulpIf(data.isLinting, bemlinter()));
 }
 
-export function validateMarkup (done) {
-	data.isLinting = true;
-	series(processMarkup)(done);
+export function validateMarkup () {
+	return src("./build/*.html")
+		.pipe(htmlValidator.analyzer())
+		.pipe(htmlValidator.reporter({ throwErrors: true }));
+}
+
+export function lintBem () {
+	return src("./build/*.html")
+		.pipe(bemlinter());
 }
 
 export function processStyles () {
