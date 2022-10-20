@@ -1,4 +1,5 @@
 export default {
+	"projectName": "Шаблон проекта",
 	"pages": [
 		{
 			"path": "index.html",
