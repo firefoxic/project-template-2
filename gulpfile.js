@@ -1,7 +1,7 @@
 import gulp from "gulp";
 import browser from "browser-sync";
 import plumber from "gulp-plumber";
-import data from "./source/templates/_data.js";
+import data from "./source/data.json" assert { type: "json"};
 import twig from "gulp-twig";
 import htmlmin from "gulp-htmlmin";
 import { htmlValidator } from "gulp-w3c-html-validator";
