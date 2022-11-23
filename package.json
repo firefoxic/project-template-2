@@ -16,6 +16,7 @@
 		"gulp-postcss": "^9.0.1",
 		"gulp-sass": "^5.1.0",
 		"gulp-stacksvg": "^1.0.6",
+		"gulp-svgmin": "^4.1.0",
 		"gulp-terser": "^2.1.0",
 		"gulp-twig": "^1.2.0",
 		"gulp-w3c-html-validator": "^5.1.4",

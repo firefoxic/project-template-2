@@ -9,6 +9,7 @@ import bemlinter from "gulp-html-bemlinter";
 import dartSass from "sass";
 import gulpSass from "gulp-sass";
 import { stacksvg } from "gulp-stacksvg";
+import svgo from "gulp-svgmin";
 import postcss from "gulp-postcss";
 import postUrl from "postcss-url";
 import autoprefixer from "autoprefixer";
@@ -105,6 +106,7 @@ export function createAvif (done) {
 
 export function createStack () {
 	return src("./source/icons/**/*.svg")
+		.pipe(svgo())
 		.pipe(stacksvg())
 		.pipe(dest("./build/icons"));
 }
