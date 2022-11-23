@@ -9,11 +9,7 @@
 .page__body {
 	margin: 0;
 	min-height: 100%;
-	background-color: hsl(0 0% 96%);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	background-image: var(--bg-image);
+	background: hsl(0 0% 96%) var(--bg-image) no-repeat center / contain;
 
 	@include bg-image(test);
 }
