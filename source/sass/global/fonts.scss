@@ -2,22 +2,53 @@
 	font-family: "Open Sans";
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src:
 		url("../../fonts/opensans.woff2") format("woff2"),
 		url("../../fonts/opensans.woff") format("woff");
-	font-display: swap;
 }
 
 @font-face {
 	font-family: "Open Sans";
 	font-style: normal;
 	font-weight: 700;
+	font-display: swap;
 	src:
 		url("../../fonts/opensansbold.woff2") format("woff2"),
 		url("../../fonts/opensansbold.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Oswald";
+	font-style: normal;
+	font-weight: 400;
 	font-display: swap;
+	src:
+		url("../../fonts/oswald-regular.woff2") format("woff2"),
+		url("../../fonts/oswald-regular.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Oswald";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src:
+		url("../../fonts/oswald-medium.woff2") format("woff2"),
+		url("../../fonts/oswald-medium.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src:
+		url("../../fonts/lato-regular.woff2") format("woff2"),
+		url("../../fonts/lato-regular.woff") format("woff");
 }
 
 :root {
-	--main-font: "Open Sans", "Arial", sans-serif;
+	--main-font: "Lato", sans-serif;
+	--accent-font: "Oswald", sans-serif;
 }

@@ -4,9 +4,15 @@
 
 ```bash
 ./
-├── opensansbold.woff
-├── opensansbold.woff2
-├── opensans.woff
-├── opensans.woff2
+├── lato-regular.woff
+├── lato-regular.woff2
+├── opensans-bold.woff
+├── opensans-bold.woff2
+├── opensans-regular.woff
+├── opensans-regular.woff2
+├── oswald-medium.woff
+├── oswald-medium.woff2
+├── oswald-regular.woff
+├── oswald-regular.woff2
 └── README
 ```

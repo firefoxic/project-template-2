@@ -29,7 +29,7 @@
 	- Если ссылки на `upstream` нет, добавь её:
 
 		```shell
-		git remote add upstream <ssh_ссылка_основного_репозитория>
+		git remote add upstream git@github.com:htmlacademy-adaptive/000000000000-cat-energy-27.git
 		```
 
 3. Отправь изменения в форк на Гитхабе

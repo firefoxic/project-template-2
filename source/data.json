@@ -1,5 +1,5 @@
 {
-	"projectName": "Шаблон проекта",
+	"projectName": "Cat Energy",
 	"pages": [
 		{
 			"path": "index.html",
@@ -16,7 +16,7 @@
 	],
 	"viewports": {
 		"desktop": 1280,
-		"tablet": 640,
+		"tablet": 768,
 		"mobile": null
 	},
 	"images": {

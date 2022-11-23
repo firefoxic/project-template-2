@@ -1,7 +1,7 @@
 {
-	"name": "project-template-2",
+	"name": "cat-energy-27",
 	"private": true,
-	"description": "Шаблон проекта для студентов 2 курса",
+	"description": "Личный проект «Кэт энерджи» от HTML Academy",
 	"devDependencies": {
 		"@htmlacademy/editorconfig-cli": "^1.0.0",
 		"autoprefixer": "^10.4.13",
