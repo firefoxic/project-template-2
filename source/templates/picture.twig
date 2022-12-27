@@ -4,46 +4,42 @@
 <picture>
 	{% for format in formats -%}
 
-		{% for vp in image.viewports -%}
+		{% for size in image.sizes -%}
 
 			{% if format != image.ext or not loop.last -%}
 
 				<source
+					{% if viewports[size.viewport] -%}
+					media="(min-width: {{ viewports[size.viewport] }}px)"
+					{%- endif %}
 					srcset="
 						{%- for dppx in densities -%}
-							img/{{ name }}-{{ vp }}@{{ dppx }}x.{{ format }} {{ dppx }}x
+							img/{{ name }}-{{ size.viewport }}@{{ dppx }}x.{{ format }} {{ dppx }}x
 							{%- if dppx != image.maxdppx %}, {% endif -%}
 						{%- endfor -%}
 					"
 					type="image/{{ format }}"
-					{% if viewports[vp] -%}
-						media="(min-width: {{ viewports[vp] }}px)"
-					{%- endif -%}
+					width="{{ size.width }}"
+					height="{{ size.height }}"
 				>
-
-			{% else -%}
-
+			{%- else -%}
 				<img
 					class="{{ class }}"
-					src="img/{{ name }}-{{ vp }}@1x.{{ image.ext }}"
+					src="img/{{ name }}-{{ size.viewport }}@1x.{{ image.ext }}"
 					srcset="
 						{%- for dppx in densities if dppx != 1 -%}
-							img/{{ name }}-{{ vp }}@{{ dppx }}x.{{ image.ext }} {{ dppx }}x
+							img/{{ name }}-{{ size.viewport }}@{{ dppx }}x.{{ image.ext }} {{ dppx }}x
 							{%- if dppx != image.maxdppx -%}, {% endif -%}
 						{%- endfor -%}
 					"
-					{% if image.width %}
-						width="{{ image.width }}"
-					{% endif -%}
-					{% if image.height %}
-						height="{{ image.height }}"
-					{% endif -%}
+					width="{{ size.width }}"
+					height="{{ size.height }}"
 					alt="{{ alt }}"
 				>
 
-			{% endif -%}
+			{%- endif -%}
 
 		{%- endfor -%}
 
-	{% endfor %}
+	{%- endfor -%}
 </picture>

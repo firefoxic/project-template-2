@@ -51,7 +51,7 @@ export function processStyles () {
 			'getext($name)': (name) => new dartSass.types.String(data.images[name.getValue()].ext),
 			'getmaxdppx($name)': (name) => new dartSass.types.Number(data.images[name.getValue()].maxdppx),
 			'getviewports($name)': function (name) {
-				let [...vps] = data.images[name.getValue()].viewports;
+				let vps = data.images[name.getValue()].sizes.map((size) => size.viewport);
 				let viewports = new dartSass.types.List(vps.length);
 				vps.reverse().forEach((vp, i) => { viewports.setValue(i, new dartSass.types.String(vp)) });
 				return viewports;
