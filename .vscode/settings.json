@@ -1,7 +1,7 @@
 {
 	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
 	"editor.codeActionsOnSave": {
-		"source.fixAll.stylelint": true
+		"source.fixAll": true
 	},
 	"editor.detectIndentation": false,
 	"editor.guides.bracketPairs": true,

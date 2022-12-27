@@ -1,10 +1,6 @@
 .DS_Store
 .idea
-*.ai
 *.log
-*.pdf
-*.psd
-*.sublime*
 node_modules/
 npm-debug.*
 build/

@@ -10,8 +10,8 @@
 
 1. В своей локальной копии переключись в ветку `master`
 
-    ```shell
-  	git checkout master
+	```shell
+	git checkout master
 	```
 
 2. Забери изменения из основного репозитория
@@ -20,16 +20,16 @@
 	git pull upstream master
 	```
 
-	- Проверить, есть ли ссылка на основной репозиторий, можно командой:
+	* Проверить, есть ли ссылка на основной репозиторий, можно командой:
 
 		```shell
 		git remote -v
 		```
 
-	- Если ссылки на `upstream` нет, добавь её:
+	* Если ссылки на `upstream` нет, добавь её:
 
 		```shell
-		git remote add upstream git@github.com:htmlacademy-adaptive/000000000000-cat-energy-27.git
+		git remote add upstream git@github.com:htmlacademy-adaptive/000000000000-cat-energy-28.git
 		```
 
 3. Отправь изменения в форк на Гитхабе

@@ -1,10 +1,9 @@
+import data from './source/data.json' assert { type: 'json'};
 import gulp from 'gulp';
 import browser from 'browser-sync';
 import plumber from 'gulp-plumber';
-import data from './source/data.json' assert { type: 'json'};
 import twig from 'gulp-twig';
 import htmlmin from 'gulp-htmlmin';
-import { htmlValidator } from 'gulp-w3c-html-validator';
 import bemlinter from 'gulp-html-bemlinter';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -31,12 +30,6 @@ export function processMarkup () {
 		}))
 		.pipe(htmlmin({ collapseWhitespace: !data.isDevelopment }))
 		.pipe(dest('./build'))
-}
-
-export function validateMarkup () {
-	return src('./build/*.html')
-		.pipe(htmlValidator.analyzer())
-		.pipe(htmlValidator.reporter({ throwErrors: true }));
 }
 
 export function lintBem () {
@@ -165,17 +158,13 @@ export function compileProject (done) {
 	)(done);
 }
 
-// Production
-
-export function build (done) {
+export function buildProd (done) {
 	data.isDevelopment = false;
 	series(
 		removeBuild,
 		compileProject
 	)(done);
 }
-
-// Development
 
 export function runDev (done) {
 	series(
