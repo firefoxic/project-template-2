@@ -30,11 +30,9 @@
 
 @mixin bg-image($name) {
 	$formats: getext($name), webp, avif;
-	$image-set-webp: image-set(url("image.webp") 1x);
-	$image-set-avif: image-set(url("image.avif") 1x);
 
 	@each $format in $formats {
-		$className: if(($format == webp) or ($format == avif), ".#{$format}", "");
+		$className: if(($format == webp) or ($format == avif), ".#{$format}", ".fallback");
 
 		#{$className} & {
 			@include bg-adaptive($name, $format);
