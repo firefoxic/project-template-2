@@ -34,7 +34,7 @@ jobs:
         run: corepack enable; corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
-        run: pnpm i --ignore-scripts
+        run: pnpm i
 
       - name: Run checks
         run: npm run lint
