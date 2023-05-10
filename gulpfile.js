@@ -1,4 +1,3 @@
-import data from './source/data.json' assert { type: 'json'};
 import gulp from 'gulp';
 import browser from 'browser-sync';
 import plumber from 'gulp-plumber';
@@ -14,9 +13,10 @@ import postUrl from 'postcss-url';
 import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
 import terser from 'gulp-terser';
-import squoosh from 'gulp-libsquoosh';
+import sharpResponsive from "gulp-sharp-responsive";
 import { deleteAsync } from 'del';
-import gulpIf from 'gulp-if';
+
+import data from './source/data.json' assert { type: 'json'};
 
 const { src, dest, watch, series, parallel } = gulp;
 const sass = gulpSass(dartSass);
@@ -72,28 +72,23 @@ export function processScripts () {
 }
 
 export function optimizeImages () {
-	return src('./source/img/**/*.{png,jpg}')
-		.pipe(gulpIf(!data.isDevelopment, squoosh()))
-		.pipe(dest('build/img'))
-}
-
-export function createWebp (done) {
 	if (!data.isDevelopment) {
 		return src('./source/img/**/*.{jpg,png}')
-			.pipe(squoosh({ webp: {} }))
+			.pipe(sharpResponsive({
+				formats: [
+					{},
+					{
+						format: "webp"
+					},
+					{
+						format: "avif"
+					}
+				]
+			}))
 			.pipe(dest('./build/img'))
 	} else {
-		done()
-	}
-}
-
-export function createAvif (done) {
-	if (!data.isDevelopment) {
 		return src('./source/img/**/*.{jpg,png}')
-			.pipe(squoosh({ avif: {} }))
 			.pipe(dest('./build/img'))
-	} else {
-		done()
 	}
 }
 
@@ -120,6 +115,7 @@ export function copyAssets () {
 export function removeBuild () {
 	return deleteAsync('./build');
 };
+
 
 export function startServer(done) {
 	browser.init({
@@ -152,9 +148,7 @@ export function compileProject (done) {
 		processScripts,
 		createStack,
 		copyAssets,
-		optimizeImages,
-		createWebp,
-		createAvif
+		optimizeImages
 	)(done);
 }
 
