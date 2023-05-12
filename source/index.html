@@ -3,7 +3,9 @@
 {% extends "./templates/_layout.twig" %}
 
 {% block main %}
-<main>
+
 	Контент главной страницы
-</main>
+
+	{% include "./templates/picture.twig" with {name: "example", class: "example-image", alt: "Альтернативный текст."} %}
+
 {% endblock %}

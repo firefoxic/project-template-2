@@ -1,6 +1,6 @@
 $breakpoint-tablet: getbreakpoint(tablet) * 1px;
 $breakpoint-desktop: getbreakpoint(desktop) * 1px;
-$breakpoint-gap: 0.1px;
+$breakpoint-gap: 0.02px;
 
 $mobile-only: "(max-width: #{$breakpoint-tablet - $breakpoint-gap})";
 $tablet-only: "(min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";

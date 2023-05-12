@@ -1,5 +1,5 @@
 .page {
-	height: 100%;
+	block-size: 100%;
 	font-family: var(--main-font);
 	font-size: 14px;
 	// font-size: 15px;
@@ -10,21 +10,28 @@
 
 .page__body {
 	margin: 0;
-	min-height: 100%;
-	background: hsl(0 0% 96%) var(--bg-image) no-repeat center / contain;
+	min-block-size: 100%;
 
-	@include bg-image(test);
+	& main::before {
+		content: "Фон псевдоэлемента";
+		display: block;
+		inline-size: 100%;
+		aspect-ratio: 1;
+		background: oklch(96% 0 0) var(--bg-image) no-repeat center / contain;
+	}
+
+	@include bg-image(example);
 }
 
 .page__centerer {
-	margin: 0 20px;
+	margin-inline: 20px;
 
 	@media #{$not-mobile} {
-		margin: 0 30px;
+		margin-inline: 30px;
 	}
 
 	@media #{$desktop-only} {
-		width: 1220px;
-		margin: 0 auto;
+		inline-size: 1220px;
+		margin-inline: auto;
 	}
 }

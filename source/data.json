@@ -1,16 +1,17 @@
 {
+	"SERVER_ROOT": "./build/",
 	"projectName": "Cat Energy",
 	"pages": [
 		{
-			"path": "index.html",
+			"path": "./",
 			"name": "Главная"
 		},
 		{
-			"path": "catalog.html",
+			"path": "./catalog.html",
 			"name": "Каталог"
 		},
 		{
-			"path": "form.html",
+			"path": "./form.html",
 			"name": "Форма"
 		}
 	],
@@ -20,28 +21,7 @@
 		"mobile": null
 	},
 	"images": {
-		"map": {
-			"ext": "png",
-			"maxdppx": 2,
-			"sizes": [
-				{
-					"viewport": "desktop",
-					"width": 1220,
-					"height": 400
-				},
-				{
-					"viewport": "tablet",
-					"width": 768,
-					"height": 400
-				},
-				{
-					"viewport": "mobile",
-					"width": 320,
-					"height": 362
-				}
-			]
-		},
-		"test": {
+		"example": {
 			"ext": "png",
 			"maxdppx": 2,
 			"sizes": [
