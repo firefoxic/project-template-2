@@ -1,0 +1,115 @@
+// stylelint-disable
+
+body * {
+	/*****************************************
+	 * Управляй обводкой шестью параметрами: *
+	 *****************************************/
+
+	/**
+	 * 1) Тон цвета по цветовому кругу обводки первого потомка body
+	 *    возможны отрицательные значения
+	 */
+	--hue-offset: 30;
+
+	/*
+	 * 2) Угол поворота по цветовому кругу для более глубокой вложенности
+	 *    возможны отрицательные значения
+	 */
+	--hue-rotate: 55;
+
+	/**
+	 * 3) Цветность обводки
+	 */
+	--chroma: 0.12;
+
+	/**
+	 * 4) Светлость цвета обводки
+	 */
+	--lightness: 45%;
+
+	/**
+	 * 5) Толщина обводки
+	 */
+	--outline-width: 3px;
+
+	/**
+	 * 6) Непрозрачность фонового цвета
+	 */
+	--bgc-opacity: 0.1;
+
+	--hue: calc(var(--hue-offset) + var(--hue-rotate) * var(--hue-rotate-step));
+	--outline-color: oklch(var(--lightness) var(--chroma) var(--hue));
+	--class-indicator-size: 1.6;
+
+	transition: all 0.1s;
+	outline: var(--outline-width) solid var(--outline-color);
+	outline-offset: calc(-1 * var(--outline-width));
+}
+
+body *:hover {
+	--voile: oklch(var(--lightness) var(--chroma) var(--hue) / var(--bgc-opacity));
+	background-image: linear-gradient(var(--voile), var(--voile));
+	box-shadow: 0 0 15px 5px oklch(0 0 0 / 0.5);
+}
+
+body *:hover::after {
+	content: attr(class);
+	position: fixed;
+	z-index: 100;
+	inset-inline-end: 0px;
+	inset-block-start: calc(1em * var(--class-indicator-size) * var(--hue-rotate-step));
+	padding-inline: 1em;
+	line-height: var(--class-indicator-size);
+	font-family: monospace;
+	font-size: 16px;
+	white-space: pre;
+	text-transform: none;
+	text-align: center;
+	color: oklch(100% 0 0);
+	background: var(--outline-color);
+	opacity: 0.9;
+}
+
+body > * {
+	--hue-rotate-step: 0;
+}
+
+body > * > * {
+	--hue-rotate-step: 1;
+}
+
+body > * > * > * {
+	--hue-rotate-step: 2;
+}
+
+body > * > * > * > * {
+	--hue-rotate-step: 3;
+}
+
+body > * > * > * > * > * {
+	--hue-rotate-step: 4;
+}
+
+body > * > * > * > * > * > * {
+	--hue-rotate-step: 5;
+}
+
+body > * > * > * > * > * > * > * {
+	--hue-rotate-step: 6;
+}
+
+body > * > * > * > * > * > * > * > * {
+	--hue-rotate-step: 7;
+}
+
+body > * > * > * > * > * > * > * > * > * {
+	--hue-rotate-step: 8;
+}
+
+body > * > * > * > * > * > * > * > * > * > * {
+	--hue-rotate-step: 9;
+}
+
+body > * > * > * > * > * > * > * > * > * > * > * {
+	--hue-rotate-step: 10;
+}
