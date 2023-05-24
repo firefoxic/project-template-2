@@ -1,3 +1,4 @@
+// Вспомогательный миксин, используемый в основном
 @mixin bg-adaptive($name, $format) {
 	@each $viewport in getviewports($name) {
 		$media-query: null;
@@ -28,6 +29,7 @@
 	}
 }
 
+// Основной миксин, генерирующий все возможные варианты растрового фона (в виде кастомки)
 @mixin bg-image($name) {
 	$formats: getext($name), webp, avif;
 

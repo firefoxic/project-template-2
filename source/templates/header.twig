@@ -4,9 +4,10 @@
 
 	<nav class="main-nav main-nav--nojs main-nav--opened">
 		<ul class="main-nav__list">
+			{# Генерация пунктов списка навигации циклом по массиву pages из data.json #}
 			{% for page in pages %}
 			<li class="main-nav__item">
-				<a href="{{ page.path }}" class="main-nav__link link"{% if permalink == page.path %} aria-current="page"{% endif %}>{{ page.name }}</a>
+				<a href="{{ page.path }}" class="main-nav__link link" {% if permalink == page.path %} aria-current="page"{% endif %}>{{ page.name }}</a>
 			</li>
 			{% endfor %}
 		</ul>

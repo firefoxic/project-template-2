@@ -10,6 +10,7 @@
 	margin: 0;
 	min-block-size: 100%;
 
+	// Пример вставки адаптивного растра в фон
 	& main::before {
 		content: "Фон псевдоэлемента";
 		display: block;
@@ -18,9 +19,11 @@
 		background: oklch(96% 0 0) var(--bg-image) no-repeat center / contain;
 	}
 
-	@include bg-image(example);
+	@include bg-image(example); // добавляет кастомку в разные @media, поэтому не нужно его вставлять в псевдики, лучше просто в блок/элемент
+	// Конец примера
 }
 
+// пример интерполяции в @media
 .page__centerer {
 	margin-inline: 20px;
 

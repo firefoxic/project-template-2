@@ -1,7 +1,9 @@
+// Контрольные вьюпорт-брейкпоинты забираемые из data.json
 $breakpoint-tablet: getbreakpoint(tablet) * 1px;
 $breakpoint-desktop: getbreakpoint(desktop) * 1px;
 $breakpoint-gap: 0.02px;
 
+// Медиа-выражения готовые к удобной интерполяции (пример в "source/sass/blocks/page.scss")
 $mobile-only: "(max-width: #{$breakpoint-tablet - $breakpoint-gap})";
 $tablet-only: "(min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
 $desktop-only: "(min-width: #{$breakpoint-desktop})";
