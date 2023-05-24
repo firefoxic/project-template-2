@@ -1,24 +1,4 @@
 @font-face {
-	font-family: "Open Sans";
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src:
-		url("../../fonts/opensans.woff2") format("woff2"),
-		url("../../fonts/opensans.woff") format("woff");
-}
-
-@font-face {
-	font-family: "Open Sans";
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src:
-		url("../../fonts/opensansbold.woff2") format("woff2"),
-		url("../../fonts/opensansbold.woff") format("woff");
-}
-
-@font-face {
 	font-family: "Oswald";
 	font-style: normal;
 	font-weight: 400;
@@ -49,6 +29,6 @@
 }
 
 :root {
-	--main-font: "Lato", sans-serif;
-	--accent-font: "Oswald", sans-serif;
+	--main-font: "Lato", system-ui, sans-serif;
+	--accent-font: "Oswald", system-ui, sans-serif;
 }

@@ -7,6 +7,10 @@
 	<title>{{ projectName }}: {{ pages[pageId].name }}</title>
 	{% include "./detect-format.twig" %}
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="preload" href="./fonts/lato-regular.woff2" type="font/woff2" as="font" crossorigin>
+	<link rel="preload" href="./fonts/oswald-medium.woff2" type="font/woff2" as="font" crossorigin>
+	<link rel="preload" href="./fonts/oswald-regular.woff2" type="font/woff2" as="font" crossorigin>
+	<script src="./js/index.js" defer></script>
 </head>
 
 <body class="page__body">

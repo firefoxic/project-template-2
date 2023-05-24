@@ -8,11 +8,11 @@
 		},
 		{
 			"path": "./catalog.html",
-			"name": "Каталог"
+			"name": "Каталог продукции"
 		},
 		{
 			"path": "./form.html",
-			"name": "Форма"
+			"name": "Подбор программы"
 		}
 	],
 	"viewports": {
