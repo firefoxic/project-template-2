@@ -48,7 +48,7 @@ export function lintBem () {
 		.pipe(bemlinter())
 }
 
-export async function processStyles () {
+export function processStyles () {
 	const { viewports, images } = readJsonFile(DATA_PATH)
 	const sassOptions = {
 		functions: {

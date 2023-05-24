@@ -46,6 +46,7 @@
 		"last 2 versions",
 		"not dead",
 		"not op_mini all",
+		"not and_uc > 0",
 		"not < 0.2%"
 	],
 	"pre-commit": {
