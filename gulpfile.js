@@ -44,7 +44,7 @@ export function processMarkup () {
 }
 
 export function lintBem () {
-	return src(`./build/*.html`)
+	return src(`${SERVER_ROOT}*.html`)
 		.pipe(bemlinter())
 }
 
