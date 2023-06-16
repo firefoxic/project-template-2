@@ -36,7 +36,7 @@ function readJsonFile (path) {
 export function processMarkup () {
 	return src(`${SOURCE_ROOT}*.html`)
 		.pipe(twig({
-			data: { isDevelopment, ...readJsonFile(DATA_PATH) }
+			data: { isDevelopment, ...readJsonFile(DATA_PATH) },
 		}))
 		.pipe(htmlmin({ collapseWhitespace: !isDevelopment }))
 		.pipe(dest(SERVER_ROOT))
@@ -64,8 +64,8 @@ export function processStyles () {
 			"getviewports($name)": function (name) {
 				let vps = images[name.dartValue].sizes.map((size) => size.viewport).reverse()
 				return new dartSass.SassList(vps.map((vp) => new dartSass.SassString(vp)))
-			}
-		}
+			},
+		},
 	}
 
 	return src(`${SOURCE_ROOT}sass/*.scss`, { sourcemaps: isDevelopment })
@@ -74,7 +74,7 @@ export function processStyles () {
 		.pipe(postcss([
 			postUrl({ assetsPath: `../` }),
 			autoprefixer(),
-			csso()
+			csso(),
 		]))
 		.pipe(dest(`${SERVER_ROOT}css`, { sourcemaps: isDevelopment }))
 		.pipe(server.stream())
@@ -103,12 +103,12 @@ export function optimizeImages () {
 				formats: [
 					{},
 					{
-						format: `webp`
+						format: `webp`,
 					},
 					{
-						format: `avif`
-					}
-				]
+						format: `avif`,
+					},
+				],
 			}))
 			.pipe(dest(`${SERVER_ROOT}img`))
 	} else {
@@ -124,7 +124,7 @@ const ASSETS_PATHS = [
 	`${SOURCE_ROOT}*.ico`,
 	`${SOURCE_ROOT}img/**/*.svg`,
 	`${SOURCE_ROOT}favicons/*`,
-	`${SOURCE_ROOT}*.webmanifest`
+	`${SOURCE_ROOT}*.webmanifest`,
 ]
 
 export function copyAssets () {
@@ -147,11 +147,11 @@ function reloadServer (done) {
 export function startServer () {
 	server.init({
 		server: {
-			baseDir: SERVER_ROOT
+			baseDir: SERVER_ROOT,
 		},
 		cors: true,
 		notify: false,
-		ui: false
+		ui: false,
 	})
 
 	watch(`${SOURCE_ROOT}**/*.{html,twig}`, series(processMarkup))
@@ -181,7 +181,7 @@ export function compileProject (done) {
 		processScripts,
 		createStack,
 		copyAssets,
-		optimizeImages
+		optimizeImages,
 	)(done)
 }
 
@@ -189,13 +189,13 @@ export function buildProd (done) {
 	isDevelopment = false
 	series(
 		removeBuild,
-		compileProject
+		compileProject,
 	)(done)
 }
 
 export function runDev (done) {
 	series(
 		compileProject,
-		startServer
+		startServer,
 	)(done)
 }
