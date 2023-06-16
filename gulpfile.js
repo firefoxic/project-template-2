@@ -9,7 +9,7 @@ import plumber from "gulp-plumber"
 import twig from "gulp-twig"
 import htmlmin from "gulp-htmlmin"
 import bemlinter from "gulp-html-bemlinter"
-import dartSass from "sass"
+import * as dartSass from "sass"
 import gulpSass from "gulp-sass"
 import svgo from "gulp-svgmin"
 import postcss from "gulp-postcss"
@@ -52,14 +52,18 @@ export function processStyles () {
 	const { viewports, images } = readJsonFile(DATA_PATH)
 	const sassOptions = {
 		functions: {
-			"getbreakpoint($bp)": (bp) => new dartSass.types.Number(viewports[bp.getValue()]),
-			"getext($name)": (name) => new dartSass.types.String(images[name.getValue()].ext),
-			"getmaxdppx($name)": (name) => new dartSass.types.Number(images[name.getValue()].maxdppx),
+			"getbreakpoint($bp)": function (bp) {
+				return new dartSass.SassNumber(viewports[bp.dartValue])
+			},
+			"getext($name)": function (name) {
+				return new dartSass.SassString(images[name.dartValue].ext)
+			},
+			"getmaxdppx($name)": function (name) {
+				return new dartSass.SassNumber(images[name.dartValue].maxdppx)
+			},
 			"getviewports($name)": function (name) {
-				const bps = images[name.getValue()].sizes.map((size) => size.viewport)
-				const breakpoints = new dartSass.types.List(bps.length)
-				bps.reverse().forEach((vp, i) => { breakpoints.setValue(i, new dartSass.types.String(vp)) })
-				return breakpoints
+				let vps = images[name.dartValue].sizes.map((size) => size.viewport).reverse()
+				return new dartSass.SassList(vps.map((vp) => new dartSass.SassString(vp)))
 			}
 		}
 	}
